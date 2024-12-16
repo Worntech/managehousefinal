@@ -1,0 +1,192 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title></title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+<!-- Favicons -->
+<link href="{% static 'web/assets/img/favicon.png' %}" rel="icon">
+<link href="{% static 'web/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="{% static 'web/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+<link href="{% static 'web/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'web/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+<link href="{% static 'web/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="{% static 'web/assets/css/style.css' %}" rel="stylesheet">
+
+<style>
+    .table-container {
+        width: 80%;
+        margin: auto;
+        overflow-x: auto;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    thead {
+        background: #007BFF;
+        color: #fff;
+    }
+    
+    thead th {
+        padding: 10px;
+        text-align: center; /* Center-align header text */
+    }
+    
+    tbody tr:nth-child(even) {
+        background: #f9f9f9;
+    }
+    
+    tbody td {
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .lock-btn,
+    .unlock-btn {
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-weight: bold;
+        color: #fff;
+    }
+    
+    .lock-btn {
+        background: #dc3545; /* Red for lock */
+        transition: background 0.3s;
+    }
+    
+    .unlock-btn {
+        background: #28a745; /* Green for unlock */
+        transition: background 0.3s;
+    }
+    
+    .lock-btn:hover {
+        background: #b02a37;
+    }
+    
+    .unlock-btn:hover {
+        background: #218838;
+    }
+</style>
+</head>
+
+<body>
+  <main id="main">
+
+    <!-- ======= Intro Single ======= -->
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">Set Room Status</h1>
+              <span class="color-text-a">Update Room Status</span>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Reseting
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Intro Single-->
+
+    <!-- ======= Blog Single ======= -->
+    <section class="news-single nav-arrow-b">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="news-img-box">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Room</th>
+                                <th>Lock</th>
+                                <th>Unlock</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Room 1</td>
+                                <td><a href="{% url 'control_esp8266' device_id='mydevicecontrol' command='highdoorone' %}" class="lock-btn">Lock</a></td>
+                                <td><a href="{% url 'control_esp8266' device_id='mydevicecontrol' command='lowdoorone' %}" class="unlock-btn">Unlock</a></td>
+                            </tr>
+                            <tr>
+                                <td>Room 2</td>
+                                <td><a href="{% url 'control_esp8266' device_id='mydevicecontrol' command='highdoortwo' %}" class="lock-btn">Lock</a></td>
+                                <td><a href="{% url 'control_esp8266' device_id='mydevicecontrol' command='lowdoortwo' %}" class="unlock-btn">Unlock</a></td>
+                            </tr>
+                            <tr>
+                                <td>Room 3</td>
+                                <td><a href="{% url 'control_esp8266' device_id='mydevicecontrol' command='highdoorthree' %}" class="lock-btn">Lock</a></td>
+                                <td><a href="{% url 'control_esp8266' device_id='mydevicecontrol' command='lowdoorthree' %}" class="unlock-btn">Unlock</a></td>
+                            </tr>
+                            <tr>
+                                <td>Room 4</td>
+                                <td><a href="{% url 'control_esp8266' device_id='mydevicecontrol' command='highdoorfour' %}" class="lock-btn">Lock</a></td>
+                                <td><a href="{% url 'control_esp8266' device_id='mydevicecontrol' command='lowdoorfour' %}" class="unlock-btn">Unlock</a></td>
+                            </tr>
+                            <tr>
+                                <td>Room 5</td>
+                                <td><a href="{% url 'control_esp8266' device_id='mydevicecontrol' command='highdoorfive' %}" class="lock-btn">Lock</a></td>
+                                <td><a href="{% url 'control_esp8266' device_id='mydevicecontrol' command='lowdoorfive' %}" class="unlock-btn">Unlock</a></td>
+
+                                <td><a href="{% url 'mytesting' %}" class="unlock-btn">My Testing</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Blog Single-->
+
+  </main><!-- End #main -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+
+{% endblock %}
